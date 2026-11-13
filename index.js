@@ -106,7 +106,7 @@ const AI_PROVIDERS = {
     openai: {
         name: "OpenAI 官方",
         baseUrl: "https://api.openai.com/v1",
-        defaultModel: "gpt-4o-mini",
+        defaultModel: "gpt-5-mini",
     },
     ollama: {
         name: "本地 Ollama (免 Key 离线)",
@@ -2981,7 +2981,7 @@ class CardCraftPlugin extends Plugin {
                     inherited: true,
                     baseUrl: (sysBase || "https://api.openai.com/v1").replace(/\/+$/, ""),
                     apiKey: sysKey,
-                    model: sysModel || "gpt-4o-mini",
+                    model: sysModel || "deepseek-chat",
                 };
             }
             // Fallback to custom fields if user filled them previously
@@ -3008,7 +3008,7 @@ class CardCraftPlugin extends Plugin {
                     inherited: true,
                     baseUrl: (sysBase || "https://api.openai.com/v1").replace(/\/+$/, ""),
                     apiKey: sysKey,
-                    model: sysModel || "gpt-4o-mini",
+                    model: sysModel || "deepseek-chat",
                 };
             }
             return null;
