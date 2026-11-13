@@ -2798,16 +2798,24 @@ class CardCraftPlugin extends Plugin {
 
     // ==================== SVG foreignObject + Canvas 2D 超清光栅化导出 ====================
     async rasterizeCardElementToBlob(cardFrameEl) {
+        const activeTheme = THEME_REGISTRY.find((t) => t.id === this.config.themeId) || THEME_REGISTRY[0];
+        if (activeTheme.pro && !this.isPro()) {
+            throw new Error(`「${activeTheme.name}」为 Pro 专属高定主题，请先升级解锁`);
+        }
+
         const canvasNode = cardFrameEl?.querySelector?.(".sycc-render-canvas");
         if (!canvasNode) throw new Error("未找到卡片渲染节点");
 
         const rect = canvasNode.getBoundingClientRect();
-        const baseW = parseInt(canvasNode.getAttribute("data-base-w"), 10) || Math.round(rect.width) || 540;
+        const baseW = Math.max(240, Math.min(2400, parseInt(canvasNode.getAttribute("data-base-w"), 10) || Math.round(rect.width) || 540));
         const attrH = parseInt(canvasNode.getAttribute("data-base-h"), 10);
-        const baseH = attrH || Math.max(320, Math.ceil(canvasNode.scrollHeight || rect.height));
-        const scale = this.config.exportScale || 2;
-        const targetW = baseW * scale;
-        const targetH = baseH * scale;
+        const rawH = attrH || Math.max(320, Math.ceil(canvasNode.scrollHeight || rect.height));
+        const baseH = Math.min(14000, Math.max(200, rawH));
+        // 防超长自适应卡片触发 Chromium Canvas 16384px / 像素面积上限空白崩溃，自动动态降采样保底清晰导出
+        const reqScale = Math.max(1, Math.min(3, Number(this.config.exportScale) || 2));
+        const maxSafeScale = Math.max(1, Math.min(reqScale, 15000 / baseH, Math.sqrt(64000000 / (baseW * baseH))));
+        const targetW = Math.round(baseW * maxSafeScale);
+        const targetH = Math.round(baseH * maxSafeScale);
 
         const cloned = canvasNode.cloneNode(true);
         cloned.style.width = `${baseW}px`;
@@ -2838,11 +2846,14 @@ class CardCraftPlugin extends Plugin {
                     cvs.width = targetW;
                     cvs.height = targetH;
                     const ctx = cvs.getContext("2d");
+                    if (!ctx) throw new Error("画布上下文分配失败，请切换多图分页模式导出");
                     ctx.imageSmoothingEnabled = true;
                     ctx.imageSmoothingQuality = "high";
                     ctx.drawImage(img, 0, 0, targetW, targetH);
                     cvs.toBlob(
                         (blob) => {
+                            cvs.width = 1;
+                            cvs.height = 1;
                             if (blob) resolve(blob);
                             else reject(new Error("Canvas 生成 PNG Blob 失败"));
                         },
