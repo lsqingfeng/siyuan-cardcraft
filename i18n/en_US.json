@@ -1,0 +1,7 @@
+{
+  "topBarTitle": "CardCraft · Visual Card Studio (Alt+Shift+C)",
+  "blockMenuLabel": "🎨 Send to CardCraft",
+  "openStudioCmd": "Open CardCraft Visual Studio",
+  "openAiConfigCmd": "CardCraft: AI Provider Settings",
+  "openProModalCmd": "CardCraft: Activate / Upgrade Pro"
+}

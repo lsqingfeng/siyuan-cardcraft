@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-11-13",
+  "currency": "CNY",
+  "plans": {
+    "pro": {
+      "id": "PRO",
+      "badge": "早鸟特惠 · 买断终身",
+      "title": "CardCraft 终身专业版",
+      "price": "29.9",
+      "original_price": "49",
+      "unit": "元 / 永久买断",
+      "highlights": [
+        "解锁全部 12 套杂志级高定卡片主题 + 字号边距微调",
+        "小红书长文无限张数分页 + 一键 .zip 批量打包下载",
+        "去除右下角渲染水印，解锁「个人 IP 品牌底座」(头像/署名/二维码)",
+        "不限次数 AI 智能提纯套卡、爆款标题与金句提取 (自备 API Key)",
+        "解锁全部 Pro 专属公众号内联富文本高级排版主题"
+      ]
+    },
+    "bundle": {
+      "id": "BUNDLE",
+      "badge": "旗舰超值联名 · 立省 ¥39",
+      "title": "思源映卡 Pro + Metrix 多平台发布 Pro 联名包",
+      "price": "59",
+      "original_price": "98",
+      "unit": "元 / 双插件终身授权",
+      "highlights": [
+        "包含 CardCraft 思源映卡 Pro 全部终身权益",
+        "额外赠送「思源矩阵发布助手 Metrix Pro」终身授权码",
+        "写完笔记一键制卡发小红书 + 一键同步公众号/知乎/掘金等 6 大平台"
+      ]
+    }
+  },
+  "primary_url": "https://mbd.pub/o/lsqingfeng/cardcraft",
+  "primary_label": "⚡ 主通道：面包多自动发卡（微信 / 支付宝秒发激活码）",
+  "afdian_url": "https://afdian.com/a/lsqingfeng",
+  "afdian_label": "⚡ 备用通道：前往爱发电赞助获取自动私信发卡",
+  "xianyu_tip": "打开【闲鱼】或【小红书】搜索店铺「清风效率工坊 / 思源映卡 CardCraft」，拍下后客服机器人 24h 秒发 SYCC-PRO 终身激活码。",
+  "wechat_contact": "lsqingfeng_studio",
+  "wechat_tip": "如需双插件联名包、团队批量采购或遇到激活问题，可添加作者微信备注「思源映卡」获取一对一协助。",
+  "announcement": "🎉 v1.0 首发早鸟价 ¥29.9 限时开放中（原价 ¥49），一次买断永久免费升级，纯离线激活不绑设备数！"
+}

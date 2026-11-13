@@ -1,0 +1,48 @@
+{
+  "name": "siyuan-cardcraft",
+  "author": "lsqingfeng",
+  "url": "https://github.com/lsqingfeng/siyuan-cardcraft",
+  "version": "1.0.0",
+  "minAppVersion": "3.0.0",
+  "backends": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "frontends": [
+    "desktop",
+    "desktop-window"
+  ],
+  "displayName": {
+    "default": "CardCraft Visual Card Studio",
+    "zh_CN": "思源映卡 CardCraft"
+  },
+  "description": {
+    "default": "Turn SiYuan notes & blocks into magazine-grade Xiaohongshu multi-card suites, Moments quote posters, article covers & WeChat rich-text in one click, with 12 bespoke themes and optional AI distillation.",
+    "zh_CN": "一键将思源笔记与选中块转化为杂志级小红书多图套卡、朋友圈金句海报、封面头图与公众号内联排版，内置 12 套高定视觉主题与可选 AI 智能提纯。"
+  },
+  "readme": {
+    "default": "README.md",
+    "zh_CN": "README.zh-CN.md"
+  },
+  "icon": "icon.png",
+  "preview": "preview.png",
+  "funding": {
+    "custom": [
+      "https://afdian.com/a/lsqingfeng"
+    ]
+  },
+  "keywords": [
+    "card",
+    "xiaohongshu",
+    "poster",
+    "markdown",
+    "wechat",
+    "cover",
+    "小红书",
+    "知识卡片",
+    "海报生成",
+    "公众号排版",
+    "思源映卡"
+  ]
+}

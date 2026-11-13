@@ -1,0 +1,17 @@
+# Private Ed25519 keys & license inventory (STRICTLY NEVER COMMIT)
+.private/
+*.pem
+*stock*.txt
+
+# Build & Release artifacts
+release/
+package.zip
+node_modules/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.vscode/
+.idea/

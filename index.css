@@ -1,0 +1,703 @@
+/* ==========================================================================
+   CardCraft 思源映卡 (siyuan-cardcraft) - Studio Workspace Stylesheet
+   Magazine-grade UI · Clean Dark/Light Adaptive Shell
+   ========================================================================== */
+
+.sycc-studio-dialog .b3-dialog__container {
+    width: min(96vw, 1380px) !important;
+    max-width: 1380px !important;
+    height: min(92vh, 900px) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 28px 70px rgba(15, 23, 42, 0.36) !important;
+}
+
+.sycc-studio-dialog .b3-dialog__body {
+    padding: 0 !important;
+    height: 100% !important;
+    overflow: hidden !important;
+}
+
+.sycc-root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: var(--b3-theme-background, #ffffff);
+    color: var(--b3-theme-on-background, #1e293b);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Inter", sans-serif;
+    user-select: none;
+}
+
+/* Top Studio Header */
+.sycc-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 54px;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--b3-border-color, rgba(148, 163, 184, 0.2));
+    background: var(--b3-theme-surface, #f8fafc);
+    flex-shrink: 0;
+}
+
+.sycc-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sycc-logo-mark {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 52%, #ec4899 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.sycc-brand-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.sycc-doc-pill {
+    font-size: 12px;
+    color: var(--b3-theme-on-surface, #64748b);
+    background: var(--b3-theme-background, #ffffff);
+    border: 1px solid var(--b3-border-color, rgba(148, 163, 184, 0.25));
+    padding: 3px 10px;
+    border-radius: 999px;
+    max-width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sycc-badge-free {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: rgba(100, 116, 139, 0.14);
+    color: var(--b3-theme-on-surface, #475569);
+    cursor: pointer;
+}
+
+.sycc-badge-pro {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.sycc-topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sycc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 13px;
+    font-size: 12.5px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid var(--b3-border-color, rgba(148, 163, 184, 0.3));
+    background: var(--b3-theme-background, #ffffff);
+    color: var(--b3-theme-on-background, #1e293b);
+    cursor: pointer;
+    transition: all 0.16s ease;
+    white-space: nowrap;
+}
+
+.sycc-btn:hover {
+    border-color: #6366f1;
+    color: #6366f1;
+    transform: translateY(-1px);
+}
+
+.sycc-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.sycc-btn-primary {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    border-color: transparent;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.28);
+}
+
+.sycc-btn-primary:hover {
+    filter: brightness(1.06);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.38);
+}
+
+.sycc-btn-gold {
+    background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+    border-color: transparent;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+}
+
+.sycc-btn-gold:hover {
+    filter: brightness(1.06);
+}
+
+.sycc-btn-wechat {
+    background: linear-gradient(135deg, #07c160 0%, #059669 100%);
+    border-color: transparent;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(7, 193, 96, 0.26);
+}
+
+/* Main Dual-Column Workspace */
+.sycc-workspace {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Left Control Sidebar */
+.sycc-sidebar {
+    border-right: 1px solid var(--b3-border-color, rgba(148, 163, 184, 0.2));
+    background: var(--b3-theme-surface, #f8fafc);
+    overflow-y: auto;
+    padding: 14px 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sycc-panel {
+    background: var(--b3-theme-background, #ffffff);
+    border: 1px solid var(--b3-border-color, rgba(148, 163, 184, 0.2));
+    border-radius: 12px;
+    padding: 12px 14px;
+}
+
+.sycc-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.sycc-panel-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--b3-theme-on-background, #0f172a);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sycc-panel-sub {
+    font-size: 11px;
+    color: var(--b3-theme-on-surface, #64748b);
+}
+
+/* AI Micro-Actions Strip */
+.sycc-ai-panel {
+    background: linear-gradient(145deg, rgba(99, 102, 241, 0.08), rgba(236, 72, 153, 0.06));
+    border: 1px solid rgba(99, 102, 241, 0.24);
+}
+
+.sycc-ai-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+}
+
+.sycc-ai-btn-main {
+    grid-column: 1 / -1;
+    height: 36px;
+    background: linear-gradient(135deg, #4f46e5 0%, #9333ea 55%, #db2777 100%);
+    color: #fff !important;
+    border: none;
+    border-radius: 9px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
+    transition: all 0.16s ease;
+}
+
+.sycc-ai-btn-main:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06);
+}
+
+.sycc-ai-candidates {
+    margin-top: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sycc-ai-cand-item {
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.45;
+    background: var(--b3-theme-background, #ffffff);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    cursor: pointer;
+    user-select: text;
+    transition: all 0.15s ease;
+}
+
+.sycc-ai-cand-item:hover {
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.06);
+}
+
+/* Aspect Ratio Selector */
+.sycc-ratio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+}
+
+.sycc-ratio-card {
+    padding: 8px 10px;
+    border-radius: 9px;
+    border: 1.5px solid var(--b3-border-color, rgba(148, 163, 184, 0.25));
+    background: var(--b3-theme-surface, #f8fafc);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sycc-ratio-card:hover {
+    border-color: rgba(99, 102, 241, 0.5);
+}
+
+.sycc-ratio-card.is-active {
+    border-color: #4f46e5;
+    background: rgba(79, 70, 229, 0.08);
+}
+
+.sycc-ratio-name {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.sycc-ratio-desc {
+    font-size: 10.5px;
+    color: var(--b3-theme-on-surface, #64748b);
+}
+
+/* 12 Theme Swatches Grid */
+.sycc-theme-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.sycc-theme-item {
+    position: relative;
+    border-radius: 10px;
+    padding: 7px;
+    border: 1.5px solid var(--b3-border-color, rgba(148, 163, 184, 0.22));
+    background: var(--b3-theme-surface, #f8fafc);
+    cursor: pointer;
+    transition: all 0.16s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sycc-theme-item:hover {
+    transform: translateY(-1px);
+    border-color: rgba(99, 102, 241, 0.55);
+}
+
+.sycc-theme-item.is-active {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.18);
+}
+
+.sycc-theme-swatch {
+    height: 36px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sycc-theme-swatch-inner {
+    width: 74%;
+    height: 68%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 6px;
+    gap: 3px;
+}
+
+.sycc-theme-swatch-bar1 {
+    height: 4px;
+    width: 65%;
+    border-radius: 2px;
+}
+
+.sycc-theme-swatch-bar2 {
+    height: 3px;
+    width: 90%;
+    border-radius: 2px;
+    opacity: 0.55;
+}
+
+.sycc-theme-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sycc-pro-tag {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #fff;
+    letter-spacing: 0.03em;
+}
+
+/* Form Controls */
+.sycc-field-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.sycc-input,
+.sycc-select,
+.sycc-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--b3-border-color, rgba(148, 163, 184, 0.35));
+    background: var(--b3-theme-surface, #f8fafc);
+    color: var(--b3-theme-on-background, #1e293b);
+    outline: none;
+    user-select: text;
+}
+
+.sycc-input:focus,
+.sycc-select:focus,
+.sycc-textarea:focus {
+    border-color: #6366f1;
+}
+
+.sycc-textarea {
+    min-height: 110px;
+    resize: vertical;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    line-height: 1.55;
+}
+
+/* Right Preview Stage */
+.sycc-stage-col {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    background: radial-gradient(circle at 20% 15%, rgba(99, 102, 241, 0.06), transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(236, 72, 153, 0.05), transparent 45%),
+                var(--b3-theme-background, #f1f5f9);
+}
+
+.sycc-stage-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--b3-border-color, rgba(148, 163, 184, 0.2));
+    background: var(--b3-theme-surface, #ffffff);
+    flex-shrink: 0;
+}
+
+.sycc-tab-group {
+    display: inline-flex;
+    background: var(--b3-theme-background, #f1f5f9);
+    padding: 3px;
+    border-radius: 9px;
+    border: 1px solid var(--b3-border-color, rgba(148, 163, 184, 0.22));
+}
+
+.sycc-tab-btn {
+    border: none;
+    background: transparent;
+    padding: 5px 13px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 7px;
+    color: var(--b3-theme-on-surface, #64748b);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.sycc-tab-btn.is-active {
+    background: var(--b3-theme-surface, #ffffff);
+    color: #4f46e5;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.sycc-page-pills {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    overflow-x: auto;
+    max-width: 440px;
+    padding: 2px 0;
+}
+
+.sycc-page-pill {
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 11.5px;
+    font-weight: 600;
+    border: 1px solid var(--b3-border-color, rgba(148, 163, 184, 0.3));
+    background: var(--b3-theme-background, #ffffff);
+    color: var(--b3-theme-on-surface, #475569);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.sycc-page-pill.is-active {
+    background: #4f46e5;
+    border-color: #4f46e5;
+    color: #ffffff;
+}
+
+.sycc-stage-viewport {
+    flex: 1;
+    overflow: auto;
+    padding: 26px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.sycc-cards-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+}
+
+.sycc-card-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.18s ease;
+}
+
+.sycc-card-slot.is-selected .sycc-card-frame {
+    outline: 3px solid #4f46e5;
+    outline-offset: 4px;
+}
+
+.sycc-card-frame {
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+    border-radius: 6px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.sycc-slot-caption {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--b3-theme-on-surface, #64748b);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* AI Companion Xiaohongshu Post Copy Box */
+.sycc-xhs-copybox {
+    width: min(100%, 760px);
+    background: var(--b3-theme-surface, #ffffff);
+    border: 1px solid rgba(236, 72, 153, 0.3);
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.08);
+    user-select: text;
+}
+
+/* WeChat Preview Container */
+.sycc-wechat-preview-shell {
+    width: min(100%, 680px);
+    background: #ffffff;
+    color: #1e293b;
+    border-radius: 14px;
+    box-shadow: 0 16px 42px rgba(15, 23, 42, 0.12);
+    padding: 32px 28px;
+    user-select: text;
+}
+
+/* Bottom Export Bar */
+.sycc-bottombar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 22px;
+    border-top: 1px solid var(--b3-border-color, rgba(148, 163, 184, 0.2));
+    background: var(--b3-theme-surface, #ffffff);
+    flex-shrink: 0;
+    gap: 12px;
+}
+
+.sycc-bottom-status {
+    font-size: 12px;
+    color: var(--b3-theme-on-surface, #64748b);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sycc-bottom-btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Upgrade & AI Settings Modals */
+.sycc-modal-body {
+    padding: 20px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+    color: var(--b3-theme-on-background, #1e293b);
+}
+
+.sycc-plan-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 14px 0;
+}
+
+.sycc-plan-card {
+    border-radius: 14px;
+    padding: 16px;
+    border: 1.5px solid var(--b3-border-color, rgba(148, 163, 184, 0.3));
+    background: var(--b3-theme-surface, #f8fafc);
+    position: relative;
+}
+
+.sycc-plan-card.is-featured {
+    border-color: #f59e0b;
+    background: linear-gradient(160deg, rgba(245, 158, 11, 0.08), rgba(234, 88, 12, 0.03));
+}
+
+.sycc-plan-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(79, 70, 229, 0.12);
+    color: #4f46e5;
+    margin-bottom: 6px;
+}
+
+.sycc-plan-card.is-featured .sycc-plan-badge {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    color: #ffffff;
+}
+
+.sycc-price-num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--b3-theme-on-background, #0f172a);
+}
+
+.sycc-price-orig {
+    font-size: 13px;
+    text-decoration: line-through;
+    color: #94a3b8;
+    margin-left: 6px;
+}
+
+.sycc-plan-list {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    font-size: 12px;
+    line-height: 1.65;
+    color: var(--b3-theme-on-surface, #475569);
+}
+
+.sycc-channel-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 14px 0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: var(--b3-theme-surface, #f8fafc);
+    border: 1px solid var(--b3-border-color, rgba(148, 163, 184, 0.24));
+}
+
+.sycc-inherit-banner {
+    padding: 9px 12px;
+    border-radius: 9px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #059669;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 980px) {
+    .sycc-workspace {
+        grid-template-columns: 330px 1fr;
+    }
+    .sycc-plan-grid {
+        grid-template-columns: 1fr;
+    }
+}
