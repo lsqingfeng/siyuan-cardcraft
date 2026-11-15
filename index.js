@@ -61,10 +61,10 @@ const DEFAULT_PRICING_CHANNELS = {
             ],
         },
     },
-    primary_url: "https://mbd.pub/o/lsqingfeng/cardcraft",
-    primary_label: "⚡ 主通道：面包多自动发卡（微信 / 支付宝秒发激活码）",
-    afdian_url: "https://afdian.com/a/lsqingfeng",
-    afdian_label: "⚡ 备用通道：前往爱发电赞助获取自动私信发卡",
+    primary_url: "https://afdian.com/a/lsqingfeng",
+    primary_label: "⚡ 官方主通道：前往爱发电赞助秒发激活码（支持微信 / 支付宝）",
+    afdian_url: "",
+    afdian_label: "",
     xianyu_tip: "打开【闲鱼】或【小红书】搜索店铺「清风效率工坊 / 思源映卡 CardCraft」，拍下后客服机器人 24h 秒发 SYCC-PRO 终身激活码。",
     wechat_contact: "lsqingfeng_studio",
     wechat_tip: "如需双插件联名包、团队批量采购或遇到激活问题，可添加作者微信备注「思源映卡」获取一对一协助。",
@@ -3356,7 +3356,7 @@ class CardCraftPlugin extends Plugin {
                         ${
                             channels.primary_url
                                 ? `<a class="sycc-btn sycc-btn-gold" href="${escapeHtml(channels.primary_url)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-                                    ${escapeHtml(channels.primary_label || "⚡ 主通道：面包多自动发卡")}
+                                    ${escapeHtml(channels.primary_label || "⚡ 官方主通道：前往爱发电获取激活码")}
                                 </a>`
                                 : ""
                         }
