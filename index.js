@@ -47,27 +47,14 @@ const DEFAULT_PRICING_CHANNELS = {
                 "解锁全部 Pro 专属公众号内联富文本高级排版主题",
             ],
         },
-        bundle: {
-            id: "BUNDLE",
-            badge: "旗舰超值联名 · 立省 ¥39",
-            title: "思源映卡 Pro + Metrix 多平台发布 Pro 联名包",
-            price: "59",
-            original_price: "98",
-            unit: "元 / 双插件终身授权",
-            highlights: [
-                "包含 CardCraft 思源映卡 Pro 全部终身权益",
-                "额外赠送「思源矩阵发布助手 Metrix Pro」终身授权码",
-                "写完笔记一键制卡发小红书 + 一键同步公众号/知乎/掘金等 6 大平台",
-            ],
-        },
     },
-    primary_url: "https://afdian.com/a/lsqingfeng",
-    primary_label: "⚡ 官方主通道：前往爱发电赞助秒发激活码（支持微信 / 支付宝）",
+    primary_url: "https://afdian.com/item/79927f0ee0b011f1a7a152540025c377",
+    primary_label: "⚡ 立即前往爱发电购买终身专业版（微信 / 支付宝 24h 自动发卡）",
     afdian_url: "",
     afdian_label: "",
-    xianyu_tip: "打开【闲鱼】或【小红书】搜索店铺「清风效率工坊 / 思源映卡 CardCraft」，拍下后客服机器人 24h 秒发 SYCC-PRO 终身激活码。",
+    xianyu_tip: "打开【爱发电】订单详情页或站内私信即可实时查看系统自动发放的 SYCC-PRO 终身激活码。",
     wechat_contact: "lsqingfeng_studio",
-    wechat_tip: "如需双插件联名包、团队批量采购或遇到激活问题，可添加作者微信备注「思源映卡」获取一对一协助。",
+    wechat_tip: "如需团队批量采购或遇到激活问题，可添加作者微信备注「思源映卡」获取一对一协助。",
     announcement: "🎉 v1.0 首发早鸟价 ¥29.9 限时开放中（原价 ¥49），一次买断永久免费升级，纯离线激活不绑设备数！",
 };
 
@@ -3311,19 +3298,19 @@ class CardCraftPlugin extends Plugin {
     async openUpgradeModal(onActivatedCallback = null) {
         const channels = await this.loadPricingChannels();
         const proPlan = channels.plans?.pro || DEFAULT_PRICING_CHANNELS.plans.pro;
-        const bundlePlan = channels.plans?.bundle || DEFAULT_PRICING_CHANNELS.plans.bundle;
+        const bundlePlan = channels.plans?.bundle || null;
         const activePro = this.isPro();
 
         const dlg = new Dialog({
             title: "💎 思源映卡 CardCraft · 升级终身专业版 (纯离线永久授权)",
-            width: "700px",
+            width: bundlePlan ? "700px" : "580px",
             content: `
             <div class="sycc-modal-body">
                 <div style="padding:9px 13px;border-radius:10px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);font-size:12.5px;font-weight:600;color:#b45309;">
                     ${escapeHtml(channels.announcement || DEFAULT_PRICING_CHANNELS.announcement)}
                 </div>
 
-                <div class="sycc-plan-grid">
+                <div class="sycc-plan-grid" style="${bundlePlan ? "" : "grid-template-columns:1fr;"}">
                     <div class="sycc-plan-card is-featured">
                         <span class="sycc-plan-badge">${escapeHtml(proPlan.badge)}</span>
                         <div style="font-size:15px;font-weight:800;margin-bottom:4px;">${escapeHtml(proPlan.title)}</div>
@@ -3336,7 +3323,9 @@ class CardCraftPlugin extends Plugin {
                             ${(proPlan.highlights || []).map((h) => `<li>${escapeHtml(h)}</li>`).join("")}
                         </ul>
                     </div>
-                    <div class="sycc-plan-card">
+                    ${
+                        bundlePlan
+                            ? `<div class="sycc-plan-card">
                         <span class="sycc-plan-badge">${escapeHtml(bundlePlan.badge)}</span>
                         <div style="font-size:15px;font-weight:800;margin-bottom:4px;">${escapeHtml(bundlePlan.title)}</div>
                         <div>
@@ -3347,16 +3336,18 @@ class CardCraftPlugin extends Plugin {
                         <ul class="sycc-plan-list">
                             ${(bundlePlan.highlights || []).map((h) => `<li>${escapeHtml(h)}</li>`).join("")}
                         </ul>
-                    </div>
+                    </div>`
+                            : ""
+                    }
                 </div>
 
                 <div class="sycc-channel-box">
-                    <div style="font-size:12.5px;font-weight:700;">🛒 多渠道自助获取激活码（任选最顺手的方式，24h 自动发卡）：</div>
-                    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px;">
+                    <div style="font-size:12.5px;font-weight:700;">🛒 官方自助购买通道（24h 全自动秒发激活码）：</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
                         ${
                             channels.primary_url
-                                ? `<a class="sycc-btn sycc-btn-gold" href="${escapeHtml(channels.primary_url)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-                                    ${escapeHtml(channels.primary_label || "⚡ 官方主通道：前往爱发电获取激活码")}
+                                ? `<a class="sycc-btn sycc-btn-gold" href="${escapeHtml(channels.primary_url)}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;width:100%;justify-content:center;">
+                                    ${escapeHtml(channels.primary_label || "⚡ 立即前往爱发电获取激活码")}
                                 </a>`
                                 : ""
                         }
@@ -3368,15 +3359,15 @@ class CardCraftPlugin extends Plugin {
                                 : ""
                         }
                     </div>
-                    <div style="font-size:11.5px;color:var(--b3-theme-on-surface);line-height:1.55;margin-top:4px;">
-                        🛍️ <strong>闲鱼 / 小红书店：</strong>${escapeHtml(channels.xianyu_tip || "")}<br/>
-                        💬 <strong>备用联系微信：</strong><code>${escapeHtml(channels.wechat_contact || "")}</code>（${escapeHtml(channels.wechat_tip || "")}）
+                    <div style="font-size:11.5px;color:var(--b3-theme-on-surface);line-height:1.55;margin-top:6px;">
+                        📦 <strong>自动取码说明：</strong>${escapeHtml(channels.xianyu_tip || "")}<br/>
+                        💬 <strong>售后联系微信：</strong><code>${escapeHtml(channels.wechat_contact || "")}</code>（${escapeHtml(channels.wechat_tip || "")}）
                     </div>
                 </div>
 
                 <div style="margin-top:12px;">
                     <div style="font-size:12.5px;font-weight:700;margin-bottom:6px;">
-                        🔐 输入离线激活码（支持 <code>SYCC-PRO-...</code> 与 <code>SYCC-BUNDLE-...</code>）
+                        🔐 输入离线激活码（粘贴 <code>SYCC-PRO-...</code> 正版激活码）
                     </div>
                     <div style="display:flex;gap:8px;">
                         <input class="sycc-input" id="syccLicenseInput" placeholder="粘贴您的 SYCC-PRO-XXXXXXXX-... 激活码" value="${escapeHtml(this.config.licenseKey || "")}" />
