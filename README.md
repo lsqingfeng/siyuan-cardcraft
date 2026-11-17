@@ -4,7 +4,12 @@
 
 **CardCraft (思源映卡)** is a 100% native, zero-backend, privacy-first visual card & social publishing studio inside SiYuan Note. Turn any note or selected blocks into **magazine-grade Xiaohongshu (`3:4`) multi-card carousels, Moments/X long quote cards, `4:5` classic posters, `2.35:1` / `16:9` article covers, and WeChat Official Account inline-styled rich text** in seconds.
 
-![CardCraft Preview](./preview.png)
+> 💎 **Early-Bird Lifetime Pro ¥29.9 (Reg. ¥49 · 100% Offline Ed25519 License · Instant Auto-Delivery)**  
+> 🛒 **Get Lifetime Pro License on Afdian**: [https://afdian.com/item/79927f0ee0b011f1a7a152540025c377](https://afdian.com/item/79927f0ee0b011f1a7a152540025c377)
+
+![CardCraft Preview: 12 Magazine Themes, 3:4 Smart Carousel Pagination & Mac Code Blocks](./preview.png)
+
+*▲ Live output preview: convert SiYuan notes and local `/assets/` images into crisp multi-card suites, long quote posters, and WeChat rich text without leaving SiYuan.*
 
 ---
 
@@ -54,6 +59,19 @@ Crafted with editorial typography, balanced whitespace, subtle textures, Mac �
 ## 🔒 Privacy & Offline Architecture
 - **100% Local Rendering**: Markdown parsing, `/assets/` image Base64 embedding, Canvas HD export, ZIP packaging, and Ed25519 license verification all run locally inside your SiYuan client.
 - **BYOK AI**: Optional AI requests go directly from your device to your chosen model endpoint.
+
+## 💎 Free vs. Lifetime Pro
+
+| Feature | 🆓 Community Free | 💎 Lifetime Pro (Early Bird ¥29.9 / Reg. ¥49) |
+| :--- | :--- | :--- |
+| **Visual Themes** | 3 Classic Themes forever free | **All 12 Magazine-Grade Themes + Typography Tuning** |
+| **Single Card Copy & Export** | Unlimited | Unlimited |
+| **Carousel Pagination & Batch Export** | Up to 3 cards per export | **Unlimited cards + 1-click `.zip` batch export** |
+| **Card Footer Branding** | Subtle CardCraft credit | **Watermark-free + Personal IP Brand Dock** |
+| **AI Smart Distillation (BYOK)** | 3 free trial runs | **Unlimited runs** (SiYuan AI or custom endpoint) |
+
+- 🛒 **Purchase Lifetime Pro Key (24h Instant Auto-Delivery)**: [https://afdian.com/item/79927f0ee0b011f1a7a152540025c377](https://afdian.com/item/79927f0ee0b011f1a7a152540025c377)
+- 🏪 **Creator Storefront**: [https://afdian.com/a/lsqingfeng](https://afdian.com/a/lsqingfeng)
 
 ## 📄 License
 MIT License © 2026 lsqingfeng
