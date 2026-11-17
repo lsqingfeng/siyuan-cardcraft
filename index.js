@@ -1,5 +1,5 @@
 /**
- * CardCraft 思源映卡 (siyuan-cardcraft) v1.0.0 - 商用正式版
+ * CardCraft 思源映卡 (siyuan-cardcraft) v1.0.1 - 商用正式版
  * 100% 纯思源原生 · 零浏览器插件 · 零后端依赖
  * 视觉知识制卡工作台（小红书多图套卡 / 朋友圈金句长图 / 4:5 海报 / 公众号头图 / 公众号内联富文本 / 可选 AI 提纯）
  */
@@ -28,7 +28,7 @@ const ED25519_PUBLIC_KEY_RAW_HEX = "64bc2ba37cd34686aa76477e996f188a20d7150f9a07
 
 // ==================== 动态多渠道付费兜底配置 ====================
 const DEFAULT_PRICING_CHANNELS = {
-    version: "1.0.0",
+    version: "1.0.1",
     updated_at: "2026-11-13",
     currency: "CNY",
     plans: {
